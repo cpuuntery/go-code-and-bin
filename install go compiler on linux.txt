@@ -9,4 +9,5 @@ echo export PATH=$PATH:/usr/local/go/bin >> ~/.profile
 source ~/.profile
 
 or install go compiler from the repos but it is older version
+
 sudo apt install golang-go
