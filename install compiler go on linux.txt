@@ -1,0 +1,12 @@
+1- go to https://go.dev/dl/
+2- wget the latest version
+wget https://go.dev/dl/go1.25.1.linux-amd64.tar.gz
+3- untar the file 
+sudo tar -xzvf go1.25.1.linux-amd64.tar.gz -C /usr/local
+4- setup the environment
+echo export PATH=$PATH:/usr/local/go/bin >> ~/.profile
+5- apply the changes done to the environment
+source ~/.profile
+
+or install go compiler from the repos but it is older version
+sudo apt install golang-go

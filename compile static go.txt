@@ -1,0 +1,16 @@
+GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -tags 'osusergo netgo' -o gobin main.go
+
+
+not position independent executables
+GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -ldflags '-extldflags "-static"' -tags 'osusergo netgo'
+
+position independent executables
+GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -ldflags '-extldflags "-static"' -buildmode pie -tags 'osusergo netgo static_build'
+
+maybe better
+GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -tags 'osusergo netgo'
+position independent executables
+GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -buildmode pie -tags 'osusergo netgo'
+
+
+GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -ldflags '-extldflags "-f no-PIC -static"' -buildmode pie -tags 'osusergo netgo static_build'
